@@ -47,7 +47,7 @@ public class VehicleService {
     }
 
 
-    public void addVehicle(String id, String make, String model) {
+    public void addVehicle(String id, String make, String model, int year) {
 
         eposide.dirty.service.VehicleService service = null;
 
@@ -55,7 +55,7 @@ public class VehicleService {
 
             service = new eposide.dirty.service.VehicleService();
 
-            Vehicle vehicle = new Vehicle(id, make, model);
+            Vehicle vehicle = new Vehicle(id, make, model, year);
 
             service.addVehicle(vehicle);
 

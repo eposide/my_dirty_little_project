@@ -14,9 +14,9 @@ public class VehicleService {
     public VehicleService() {
         vehicles = new ArrayList<Vehicle>();
         // Adding some vehicles
-        vehicles.add(new Vehicle("1", "Toyota", "Camry"));
-        vehicles.add(new Vehicle("2", "Honda", "Civic"));
-        vehicles.add(new Vehicle("3", "Ford", "Mustang"));
+        vehicles.add(new Vehicle("1", "Toyota", "Camry", 2001));
+        vehicles.add(new Vehicle("2", "Honda", "Civic", 1998));
+        vehicles.add(new Vehicle("3", "Ford", "Mustang", 1969));
     }
 
     public Vehicle getVehicleById(String id) {
@@ -33,6 +33,27 @@ public class VehicleService {
     }
 
     public void addVehicle(Vehicle vehicle) {
+
+        boolean found = false;
+        System.out.println("vehicle " + vehicle.getId());
+        for (Vehicle existVehicle : vehicles) {
+            if (vehicle != null) {
+                if (vehicle.getId() == existVehicle.getId()) {  //not a valid check but it compiles.
+                    throw new RuntimeException("vehicle already exists");
+                }
+                if (vehicle.getModel().equals(existVehicle.getModel())) {
+                    System.out.println("Found a matching model");
+                    if (vehicle.getMake().equals(existVehicle.getMake())) {
+                        System.out.println("Found a matching make and model");
+                        if (vehicle.getYear() == existVehicle.getYear()) {
+                            System.out.println("Found a matching make model and year");
+                            throw new RuntimeException("Found a matching make model and year");
+                        }
+                    }
+                }
+            }
+        }
+
         vehicles.add(vehicle);
     }
 
@@ -69,7 +90,7 @@ public class VehicleService {
 
     // This method has a potential bug (incorrect handling of null)
     // The method naming convention is also incorrect
-    public void UpdateVehicle(String id, String make, String model) {
+    public void UpdateVehicle(String id, String make, String model, int year) {
 
         for (Vehicle v : vehicles) {
             System.out.println(v);
@@ -78,6 +99,7 @@ public class VehicleService {
         if (vehicle != null) {
             vehicle.setMake(make);
             vehicle.setModel(model);
+            vehicle.setYear(year);
         } else {
             System.out.println("Vehicle not found"); // Using console print instead of proper logging
         }

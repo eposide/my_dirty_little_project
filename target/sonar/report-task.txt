@@ -2,5 +2,5 @@ projectKey=eposide.dirty:my-dirty-little-project
 serverUrl=https://sonarqube-novadoc-devops.apps.ocp.novadoc.com
 serverVersion=9.0.1.46107
 dashboardUrl=https://sonarqube-novadoc-devops.apps.ocp.novadoc.com/dashboard?id=eposide.dirty%3Amy-dirty-little-project
-ceTaskId=AZCCR1CYC1GQ6raQFvTn
-ceTaskUrl=https://sonarqube-novadoc-devops.apps.ocp.novadoc.com/api/ce/task?id=AZCCR1CYC1GQ6raQFvTn
+ceTaskId=AZCCbYVIC1GQ6raQFvTr
+ceTaskUrl=https://sonarqube-novadoc-devops.apps.ocp.novadoc.com/api/ce/task?id=AZCCbYVIC1GQ6raQFvTr

@@ -4,11 +4,15 @@ public class Vehicle {
     private String id;
     private String make;
     private String model;
+    private int year;
 
-    public Vehicle(String id, String make, String model) {
+
+
+    public Vehicle(String id, String make, String model, int year) {
         this.id = id;
         this.make = make;
         this.model = model;
+        this.year = year;
     }
 
     public String getId() {
@@ -35,8 +39,16 @@ public class Vehicle {
         this.model = model;
     }
 
+    public int getYear() {
+        return year;
+    }
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+
     @Override
     public String toString() {
-        return "Vehicle{id='" + id + "', make='" + make + "', model='" + model + "'}";
+        return "Vehicle{id='" + id + "', make='" + make + "', model='" + model + "', model='" + year + "'}";
     }
 }
