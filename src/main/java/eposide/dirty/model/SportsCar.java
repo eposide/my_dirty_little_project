@@ -1,11 +1,12 @@
 package eposide.dirty.model;
 
-public class Vehicle {
+public class SportsCar {
+
     private String id;
     private String make;
     private String model;
 
-    public Vehicle(String id, String make, String model) {
+    public SportsCar(String id, String make, String model) {
         this.id = id;
         this.make = make;
         this.model = model;
@@ -37,6 +38,6 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vehicle{id='" + id + "', make='" + make + "', model='" + model + "'}";
+        return "SportsCar{id='" + id + "', make='" + make + "', model='" + model + "'}";
     }
 }
